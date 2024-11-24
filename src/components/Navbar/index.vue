@@ -13,18 +13,18 @@ const isActive = (link) => route.path === link
 
 <template>
   <v-navigation-drawer v-model="drawer" app temporary>
-    <v-list class="py-4">
+    <v-list class="mx-4 my-8">
       <v-list-item-group v-for="(item, index) in navItems" :key="index">
-        <v-list-item>
-          <v-list-item-content>
-            <router-link
-                :class="['drawer-link', { 'active-link': isActive(item.link) }]"
-                :to="item.link"
-            >
+        <router-link
+            :class="['drawer-link', { 'active-link': isActive(item.link) }]"
+            :to="item.link"
+        >
+          <v-list-item class="my-4">
+            <v-list-item-content>
               {{ item.text }}
-            </router-link>
-          </v-list-item-content>
-        </v-list-item>
+            </v-list-item-content>
+          </v-list-item>
+        </router-link>
       </v-list-item-group>
     </v-list>
   </v-navigation-drawer>
